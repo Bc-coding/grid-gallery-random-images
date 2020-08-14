@@ -1,0 +1,158 @@
+/* 
+==================
+Variables
+==================
+*/
+:root {
+  --ff-primary: "Montserrat", sans-serif;
+  /* ------- colors ------------*/
+
+  --clr-white: #fff;
+  --clr-black: #000000;
+
+  /* ------- various ------------*/
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --transition: all 0.3 linear;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  width: 100%;
+  height: 100%;
+  line-height: 1.5;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  background: linear-gradient(45deg, #b13cff, #dd45d3 70%, #fd9d52);
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+/* 
+=============== 
+gallery 
+=============== 
+*/
+
+.gallery {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 20px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-rows: repeat(auto-fill, 300px);
+  justify-content: center;
+}
+
+.item {
+  overflow: hidden;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+}
+
+.item img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item__overlay {
+  background: #ffc60032;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transition: 0.2s;
+  transform: translateY(100%);
+  padding: 5px;
+}
+.item__overlay button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+}
+
+.item:hover .item__overlay {
+  transform: translateY(0);
+}
+
+/*
+=============== 
+gallery
+===============
+*/
+
+/*  Close Button  */
+.close {
+  background: none;
+  color: black;
+  border: 0;
+}
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  z-index: 2;
+}
+
+.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.overlay-inner {
+  background: white;
+  width: 70%;
+  padding: 20px;
+}
+.overlayImg {
+  width: 100%;
+}
